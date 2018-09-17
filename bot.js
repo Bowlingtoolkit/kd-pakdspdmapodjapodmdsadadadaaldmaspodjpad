@@ -1,11 +1,11 @@
-//By Fares
+//By OrochiX
 //جميع الحقوق محفوضة
 const Discord = require('discord.js');
 const Rocket = new Discord.Client();
 const jimp = require("jimp");// npm i jimp
 const package = ('package.json');
 const yt = require('ytdl-core');
-const prefix = ("p!")
+const prefix = ("T!")
 const child_process = require("child_process");
 const ownerid = ('280749272498962432')
 const canvas = require("canvas");
@@ -13,7 +13,7 @@ const fs = require('fs')
 const moment = require("moment");
 
 
-console.log("By Fares");
+console.log("By OrochiX");
 
 Rocket.on('ready', () => {//source
     console.log('╔[════════════════════════════════════]╗');
@@ -35,7 +35,7 @@ Rocket.on('ready', () => {//source
 
 Rocket.on('message', message => { //ping
     if(!message.channel.guild) return;
-if (message.content.startsWith('p!ping')) {
+if (message.content.startsWith('T!ping')) {
 if(!message.channel.guild) return;
 var msg = `${Date.now() - message.createdTimestamp}`
 var api = `${Math.round(Rocket.ping)}`
@@ -49,7 +49,7 @@ message.channel.send({embed:embed});
 }
 });
 Rocket.on('ready', () => { //playing
-    Rocket.user.setGame(`p!help | Servers : ${Rocket.guilds.size}	`,'https://www.twitch.tv/faresgameryt');
+    Rocket.user.setGame(`T!help | Servers : ${Rocket.guilds.size}	`,'https://www.twitch.tv/OrochiX');
     Rocket.user.setStatus('Online')
 });
 
@@ -86,7 +86,7 @@ Rocket.on('message', async message => {
 
 Rocket.on('message', message => { //bc
         if(!message.channel.guild) return;
-    if(message.content.startsWith('p!bc')) {
+    if(message.content.startsWith('T!bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
     if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -127,7 +127,7 @@ Rocket.on('message', message => { //bc
     });
 
                         Rocket.on('message', message => { //bot
-                            if (message.content.startsWith("p!bot")) {
+                            if (message.content.startsWith("T!bot")) {
                             message.channel.send({
                                 embed: new Discord.RichEmbed()
                                     .setAuthor(Rocket.user.username,Rocket.user.avatarURL)
@@ -221,7 +221,7 @@ if(msg.content.startsWith (prefix  + 'server')) {
 
 
 Rocket.on('message', message => {//av mension
-    if (message.content.startsWith("p!avatar")) {
+    if (message.content.startsWith("T!avatar")) {
 
         var mentionned = message.mentions.users.first();
     var king66s;
@@ -288,7 +288,7 @@ const x5bz4 = [ //mariam
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدنا في نشر البوت وادخل هذا السيرفر https://discord.gg/q7X8hCD ***'
 ]
  Rocket.on('message', message => {//mariam2
- if (message.content.startsWith('p!mariam')) {
+ if (message.content.startsWith('T!mariam')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -299,7 +299,7 @@ const x5bz4 = [ //mariam
     }
 });
 Rocket.on('message', message => {//roles
-    if (message.content === "p!roles") {
+    if (message.content === "T!roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -308,7 +308,7 @@ Rocket.on('message', message => {//roles
     }
 });
 Rocket.on('message', message => {//rooms
-    if (message.content === "p!rooms") {
+    if (message.content === "T!rooms") {
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -386,12 +386,12 @@ Rocket.on('message', message => {//help msg
 
 
 Rocket.on('message', message => {//help
-     if (message.content === "p!help") {
+     if (message.content === "T!help") {
   message.channel.send('**تم الارسال لك في الخاص | :ballot_box_with_check:**')
     }
 });
 Rocket.on('message', message => {//invite
-     if (message.content === "p!invite") {
+     if (message.content === "T!invite") {
      let embed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("Click Here to invite Platinum")
@@ -421,7 +421,7 @@ message.channel.sendEmbed(cat);
     }
 });
 Rocket.on('message', message => {//unmute
-    if (message.content.startsWith('p!unmute')) {
+    if (message.content.startsWith('T!unmute')) {
   if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
    let men = message.mentions.users.first()
    let mas = message.author
@@ -521,7 +521,7 @@ var currentTime = new Date(),
 ]
 
  Rocket.on('message', message => {//cuttweet
-   if (message.content.startsWith("p!cuttweet")) {
+   if (message.content.startsWith("T!cuttweet")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -534,7 +534,7 @@ var currentTime = new Date(),
 });
 Rocket.on('message', message => {//color
     let args = message.content.split(' ').slice(1);
-if(message.content.split(' ')[0] == 'p!color'){
+if(message.content.split(' ')[0] == 'T!color'){
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 .setDescription(`**لايوجد لون بهذا الرقم ** :x:`)
@@ -569,7 +569,7 @@ setInterval(function(){})
 
 }
 });
-const adminprefix = "p!";
+const adminprefix = "T!";
 const devs = ['429972030092476437'];
 Rocket.on('message', message => {//for dev
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -624,7 +624,7 @@ Rocket.on('message', function(message) {//roll
     Rocket.on("message", message => {    //serv-av
         if(!message.channel.guild) return;
  if(message.author.bot) return;
-    if(message.content === "p!serveravatar"){
+    if(message.content === "T!serveravatar"){
         const embed = new Discord.RichEmbed()
 
     .setTitle(`صورة سيرفر : ** ${message.guild.name} **`)
@@ -696,7 +696,7 @@ msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
 });
 
 Rocket.on('message', message => {//id
-    if(message.content == ('p!user')) {
+    if(message.content == ('T!user')) {
 
              if (message.channel.type === 'dm') return message.reply('هذا الامر فقط للسيرفرات :x:');
             var Canvas = module.require('canvas');
@@ -883,7 +883,7 @@ Rocket.on('message', message => {//id
     'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
   Rocket.on('message', message => {//saraahaaah
-if (message.content.startsWith('p!sarahah')) {
+if (message.content.startsWith('T!sarahah')) {
     if(!message.channel.guild) return message.reply('** هذا الامر فقط للسيرفرات **');
  var Rocket= new Discord.RichEmbed()
  .setTitle("لعبة صراحة ..")
@@ -1024,7 +1024,7 @@ Rocket.on('message', msg => {
 
 
         function commandIs(str, msg){
-            return msg.content.toLowerCase().startsWith('p!' + str);
+            return msg.content.toLowerCase().startsWith('T!' + str);
         }
 
         function pluck(array) {
@@ -1051,13 +1051,13 @@ Rocket.on('message', msg => {
 
 
 
-        var q1 = "p!quran 1"
+        var q1 = "T!quran 1"
 
-        var q2 = "p!quran 2"
+        var q2 = "T!quran 2"
 
-        var q3 = "p!quran 3"
+        var q3 = "T!quran 3"
 
-        var q4 = "p!quran 4"
+        var q4 = "T!quran 4"
 
 
 
@@ -1140,7 +1140,7 @@ Rocket.on('message', msg => {
             //outher_cummon
 
 
-          if(message.content === "p!qstop" ) {
+          if(message.content === "T!qstop" ) {
                           var servers = {};
 
                     if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
@@ -1539,7 +1539,6 @@ client.on('message' , message => {
 
 
     Rocket.login(process.env.BOT_TOKEN);
-
 
 
 
