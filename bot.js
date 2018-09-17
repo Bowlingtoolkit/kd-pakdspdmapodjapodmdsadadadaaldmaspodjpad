@@ -1538,7 +1538,7 @@ client.on('message' , message => {
  });
 
 
-    Rocket.login("NDc2MTAxNzg5OTY0MzA0Mzg1.DoCsUw.D0liKDYDtldD7ZBhLrQ6XsuXMSU");
+    Rocket.login(process.env.BOT_TOKEN);
 
 
 
