@@ -86,9 +86,8 @@ incidentchannel.send(mutedEmbed).then(() => message.guild.member(User).ban({reas
    }
 });
 
-  var fs = require('fs')
   const afk = require('./afk.json');
-client.on('message',async rebel => {
+Rocket.on('message',async rebel => {
       if(rebel.author.bot) return;
   if (afk[rebel.author.id]) {
     delete afk[rebel.author.id];
@@ -397,28 +396,20 @@ Rocket.on('message', message => {//help msg
   ❖${prefix}** rooms ** ==>**لكي ترى كل قنوات السيرفر**
   ❖${prefix}** date ** ==>**لكي ترى التاريخ**
         __**الاوامر الترفيهية :video_game:**__
-  ❖${prefix}** mariam ** ==>**للعب مع مريم**
-  ❖${prefix}** cuttweet ** ==>**لكي يعطيك جمل كت تويت عشوائية**
-  ❖${prefix}** sarahah ** ==>**لكي يعطيك جمل صراحة عشوائية**
-  ❖${prefix}** cat ** ==>**لكي ترى صور قطط عشوائية**
-  ❖${prefix}** roll ** ==>**لاختيار رقم عشوائي**
-       __**القرآن الكريم و الميوزك :kaaba: :musical_note: **__
-  ❖${prefix}** quran 1 ** ==>**القران الكريم كامل بصوت الشيخ عبدالباسط عبدالصمد **
-  ❖${prefix}** quran 2 ** ==>**سورة البقرة كاملة - القارئ الحاج ميثم التمار**
-  ❖${prefix}** quran 3 ** ==>**القرآن الكريم كامل بصوت الشيخ عبد الرحمن السديس وسعود الشريم **
-  ❖${prefix}** quran 4 ** ==>**القرآن الكريم كامل بصوت الشيخ المعيقلي**
-  ❖${prefix}** qstop ** ==>**لـ أيقاف تشغيل البوت**
+ ❖${prefix}** mariam ** ==>**للعب مع مريم**
+ ❖${prefix}** cuttweet ** ==>**لكي يعطيك جمل كت تويت عشوائية**
+ ❖${prefix}** sarahah ** ==>**لكي يعطيك جمل صراحة عشوائية**
+ ❖${prefix}** cat ** ==>**لكي ترى صور قطط عشوائية**
+ ❖${prefix}** roll ** ==>**لاختيار رقم عشوائي**
+ ❖${prefix}** xo ** ==>**لعبه xo**
+        __**:musical_note: الميوزك اوامر **__
   ❖${prefix}** play ** ==>**تشغيل اغنيه او موسيقى**
   ❖${prefix}** stop ** ==>**اطفاء الاغنيه او الموسيقى**
   ❖${prefix}** queue ** ==>**تشغيل اغنيه او موسيقى**
   ❖${prefix}** replay ** ==>**اعاده تشغيل الاغنيه او الموسيقى**
   ❖${prefix}** vol ** ==>**ترفيع وتقليل الصوت**
-
-
-
+  
   By : PlaTinUM TeaM | __**شكرا لكم لاستعمال البوت**__
-
-
   `);
 
 
@@ -1579,7 +1570,7 @@ client.on('message' , message => {
  });
 
 
-    Rocket.login(process.env.BOT_TOKEN);
+    Rocket.login('NDg1NzIyOTExNTI1NTY4NTE0.DoC1ww.3v08fH0_22T4hDS5f0aGqW4kqEY');
 
 
 
