@@ -71,18 +71,59 @@ Rocket.on('message', async message => {
        let banEmbed = new Discord.RichEmbed()
        .setAuthor(`You have been banned from ${message.guild.name} !`)
        .setThumbnail(message.guild.iconURL || message.guild.avatarURL)
-       .addField('- تم التبنيد بواسطه: ',message.author.tag,true)
-       .addField('- السبب:',Reason,true)
-       .addField('- الوقت يلي حصل فيه الباند:',date,true)
-       .addField('- مده الباند:',time,true)
+       .addField('- Banned By: ',message.author.tag,true)
+       .addField('- Reason:',Reason,true)
+       .addField('- Time & Date:',date,true)
+       .addField('- Banned Time:',time,true)
        .setFooter(message.author.tag,message.author.avatarURL);
-       User.sendMessage({embed: banEmbed}).then(() => message.guild.member(User).ban({reason: Reason}))
+    let incidentchannel = message.guild.channels.find(`name`, "log");
+if(!incidentchannel) return message.channel.send("Can't find log channel.");
+incidentchannel.send(mutedEmbed).then(() => message.guild.member(User).ban({reason: Reason}))
        .then(() => message.channel.send(`**${User} has been banned :airplan:**`)).then(() => { setTimeout(() => {
            message.guild.unban(User);
        }, mmss(time));
     });
    }
 });
+
+  var fs = require('fs')
+  const afk = require('./afk.json');
+client.on('message',async rebel => {
+      if(rebel.author.bot) return;
+  if (afk[rebel.author.id]) {
+    delete afk[rebel.author.id];
+    if (rebel.member.nickname === null) {
+rebel.channel.send("أهلا بك , <@"+rebel.author.id+"> أنأ **أحاول** ان أزيل عنك الأفك.");     } else {
+      rebel.member.setNickname(rebel.member.nickname.replace(/(\[AFK\])/,''));
+      rebel.channel.send("أهلا بك , <@"+rebel.author.id+"> تم فك عنك الأفك بسبب رجوعك."); 
+    }
+    fs.writeFile("./afk.json", JSON.stringify(afk), (err) => {if (err) console.error(err);});
+} else {
+    if (rebel.content.startsWith(prefix + 'afk ')||rebel.content === prefix + 'afk') {
+      rebel.member.setNickname("[AFK] " + rebel.member.displayName);
+      let args1 = rebel.content.split(' ').slice(1);
+      if (args1.length === 0) {
+        afk[rebel.author.id] = {"reason": true}; 
+        rebel.reply("** لقد وضعتك بوضع الأفك **")
+      } else {
+        afk[rebel.author.id] = {"reason": args1.join(" ")}; // with reason
+        rebel.reply("لقد أضفتك للأفك بسبب "+ args1.join(" ") + ".")
+      }
+      fs.writeFile("./afk.json", JSON.stringify(afk), (err) => {if (err) console.error(err);});   
+  }
+}
+         var mentionned = rebel.mentions.users.first();
+if(rebel.mentions.users.size > 0) return ;
+if (afk[rebel.mentions.users.first()]) {
+if (afk[rebel.mentions.users.first()].reason === true) {
+rebel.channel.send(`**<@!${mentionned.id}> مأفك** `);
+}else{
+rebel.channel.send(`**<@!${mentionned.username}> مأفك , سبب الأفك \n ${afk[rebel.mentions.users.first().id].reason}**`);
+}
+} 
+});
+
+
 
 Rocket.on('message', message => { //bc
         if(!message.channel.guild) return;
