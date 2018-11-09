@@ -1,5 +1,4 @@
-//By OrochiX
-//جميع الحقوق محفوضة
+//By rochiX
 const Discord = require('discord.js');
 const Rocket = new Discord.Client();
 const jimp = require("jimp");// npm i jimp
